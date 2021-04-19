@@ -1,0 +1,7 @@
+sudo mysql -u awkologi –p
+use compbiol;
+select distinct a1.metabolism
+    -> from annotation a1 inner join annotation a2
+    -> on a1.metabolism=a2.metabolism
+    -> where a1.gene<>a2.gene
+    -> ;
