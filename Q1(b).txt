@@ -1,0 +1,5 @@
+curl https://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/annotation.tab > annotation.tab
+cat annotation.tab
+echo -e 'gene\tfunction_1\tmetabolism' > annotation1.tab
+cat annotation.tab >> annotation1.tab
+head -n -1 annotation1.tab > annotationF.tab
