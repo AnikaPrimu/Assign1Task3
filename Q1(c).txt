@@ -1,0 +1,14 @@
+#code for 1st sorted file
+head -1 expressionF.tab > expressionS.tab
+tail -n +2 expressionF.tab | sort -t$'\t' -k 1 >> expressionS.tab
+cat expressionS.tab
+
+#code for 2nd sorted file
+
+head -1 annotationF.tab > annotationS1.tab
+tail -n +2 annotationF.tab | sort -t$'\t' -k 1 >> annotationS1.tab
+cat annotationS1.tab
+
+#code for joining the two sorted files
+
+join -t$'\t' -o 1.1,2.2,1.2,2.3 --header expressionS.tab annotationS1.tab
